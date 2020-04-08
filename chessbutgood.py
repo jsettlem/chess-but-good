@@ -212,11 +212,12 @@ def generate_sample_boards():
 	f = open("./boards/readme.md", 'w')
 	try:
 
-		f.write('''#Sample Boards
+		f.write(''' # Sample Boards
 
 Each sample Good Chess board contains a link to Lichess's board editor so you can launch right into an online game against a friend or try your hand against Stockfish. Just click on "continue from here."
 
-##Boards
+ ## Boards
+ 
 ''')
 		while True:
 			board = generate_board(animate=False)
@@ -231,7 +232,8 @@ Each sample Good Chess board contains a link to Lichess's board editor so you ca
 				                       animation=board_id,
 				                       base_path=f"./boards/images/{board_id}",
 				                       convert_to_png=False)
-				f.write(f'''###Score: {score_to_str(score)}  
+				f.write(f''' ### Score: {score_to_str(score)}
+
 [![{board_fen}](./images/{board_id}/svg/0.svg)]({board_url})
 FEN: `{board_fen}`    
 [Lichess board editor]({board_url})
