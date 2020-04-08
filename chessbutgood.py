@@ -96,7 +96,8 @@ def score_to_str(score: Score) -> str:
 		return str(score)
 	else:
 		p = cp / 100
-		return f"{'+' if p > 0 else ''}{p:.1f}"
+		score_str = f"{p:.1f}" if abs(p) > 0.05 else f"{p:.2f}"
+		return f"{'+' if p > 0 else ''}{score_str}"
 
 
 def output_animation_frame(board: chess.Board,
@@ -209,7 +210,7 @@ def output_board(position: str):
 
 def generate_sample_boards():
 	os.makedirs("./boards/images", exist_ok=True)
-	f = open("./boards/readme.md", 'w')
+	f = open("./boards/readme.md", 'a')
 	try:
 
 		f.write(''' # Sample Boards
@@ -224,7 +225,7 @@ Each sample Good Chess board contains a link to Lichess's board editor so you ca
 			score = evaluate_board(board)
 			abs_score = abs(score.score(mate_score=99999))
 			print("Board:", abs_score)
-			if 0 != abs_score < 3000:
+			if 0 != abs_score < 30:
 				board_id = str(uuid.uuid4())
 				board_fen = board.fen()
 				board_url = get_lichess_url(board)
@@ -245,8 +246,8 @@ FEN: `{board_fen}`
 
 
 if __name__ == '__main__':
-	# find_good_board(animate=False)
-	generate_sample_boards()
+	find_good_board(animate=False)
+	# generate_sample_boards()
 	# find_good_board(animate=True)
 	# random_animation()
 	# kings_animation()
