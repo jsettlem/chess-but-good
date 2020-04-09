@@ -1,8 +1,8 @@
 # Chess, but good
 
-![Chess, but good](./logo.png)
+[![Chess, but good](./logo.png)](https://www.youtube.com/watch?v=PTcvbDbVbtM)
 
-Confused? Watch [the video]() first.
+Confused? Watch [the video](https://www.youtube.com/watch?v=PTcvbDbVbtM) first.
 
 Just want to play the game? Check out the [pre-generated boards](boards). They contain links to Lichess's board editor so you can launch right into a game online or against Stockfish. 
 
