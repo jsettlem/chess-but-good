@@ -13,7 +13,7 @@ from PIL import Image, ImageDraw, ImageFont
 from chess.engine import Score, Mate, Cp
 
 INKSCAPE_PATH = "D:/Downloads/inkscape-0.92.4-x64/inkscape/inkscape.exe"
-STOCKFISH_PATH = "D:/Downloads/stockfish-10-win/stockfish-10-win/Windows/stockfish_10_x64.exe"
+STOCKFISH_PATH = "D:/Downloads/stockfish-11-win/stockfish-11-win/Windows/stockfish_20011801_x64.exe"
 
 engine = chess.engine.SimpleEngine.popen_uci(STOCKFISH_PATH)
 engine.configure({"Threads": 7})
